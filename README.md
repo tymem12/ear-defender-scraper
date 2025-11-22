@@ -1,15 +1,38 @@
-# EarDefender scraper
+# 🕸️ EarDefender – Scraper
 
-The scraper module in EarDefender is responsible for automatically retrieving audio files from websites, including both main pages and linked subpages. It uses advanced libraries like Selenium and yt-dlp to navigate websites and download audio content for analysis. Optimized for efficiency, the scraper ensures fast and reliable data collection, handling both static and dynamic web content. By automating the extraction process, it eliminates the need for manual file uploads, streamlining the analysis of large datasets. The module's performance is key to the system's overall speed and scalability, making it suitable for processing audio from various online platforms.
+**Automated Web Scraping & Audio Retrieval Module**
 
-## Local run
+## 🚀 Overview
 
-1. Build Docker image
-```
-docker build -t scraper-app .
-```
+The **Scraper** Module is responsible for collecting audio content from websites and online platforms.
 
-2. Run Docker container
-```
-docker run -p 8000:8000 --shm-size=2g scraper-app
-```
+It automates:
+- Navigating webpages (including dynamically loaded content)
+- Following subpage links
+- Extracting audio/video resources
+- Downloading files using tools like **Selenium** and **yt-dlp**
+
+Thanks to automation and optimized crawling logic, the scraper removes the need for manual uploads and enables efficient large-scale dataset collection. It plays a crucial role in the system’s overall performance and scalability.
+
+## ⚙️ Features
+
+- Automated browsing with **Selenium WebDriver**
+- High-reliability media downloading via **yt-dlp**
+- Support for dynamic pages, scrolling, and interactive content
+- Extraction from both main pages & nested subpages
+- Containerized service ready to interact with the Connector module
+- Designed for scalability and multi-source scraping
+
+## 🐳 Local Run (Docker)
+1. **Build Docker image**
+   
+`docker build -t scraper-app .`
+
+2. **Run container**
+
+Expose port 8000 and increase shared memory for Selenium:
+
+`docker run -p 8000:8000 --shm-size=2g scraper-app`
+
+
+***Note**: The increased `--shm-size` prevents browser crashes during complex Selenium sessions.*
